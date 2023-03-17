@@ -10,4 +10,11 @@ class Support extends Model
     use HasFactory;
 
     // protected $table = 'suportes';
+
+
+    protected $fillable = [
+        'subject',
+        'body',
+        'status'
+    ];
 }
