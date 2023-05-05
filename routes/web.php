@@ -5,6 +5,8 @@ use App\Http\Controllers\Site\SiteController;
 use App\Http\Controllers\TesteController;
 use Illuminate\Support\Facades\Route;
 
+// -> name() = nome da rota, podendo atualizar a url e continuar com o nome fixo
+
 Route::post('/supports', [SupportController::class, 'store']) -> name('supports.store');
 
 Route::get('/supports/create', [SupportController::class, 'create']) -> name('supports.create');
