@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Repositories;
+
 use App\DTO\CreateSupportDTO;
 use App\DTO\UpdateSupportDTO;
 use App\Models\Support;
@@ -18,7 +20,6 @@ class SupportEloquentORM implements SupportRepositoryInterface
 
     public function getAll(string $filter = null): array
     {
-        
         return $this->model
                     ->where(function ($query) use ($filter){
                         if ($filter){
