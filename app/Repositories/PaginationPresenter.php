@@ -53,7 +53,7 @@ class PaginationPresenter implements PaginationInterface
         return $this->paginator->currentPage() + 1;
     }
 
-    public function previusPage(): int
+    public function previousPage(): int
     {
         return $this->paginator->currentPage() - 1;
     }
@@ -65,7 +65,6 @@ class PaginationPresenter implements PaginationInterface
                 $stdClassObject = new stdClass();
                 foreach ($item->toArray() as $key => $value) {
                     $stdClassObject -> {$key} = $value;
-                    
                 }
                 array_push($response, $stdClassObject);
             }

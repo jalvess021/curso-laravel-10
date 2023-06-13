@@ -1,4 +1,5 @@
 <?php
+
 use App\Http\Controllers\Admin\{SupportController};
 use App\Http\Controllers\Site\SiteController;
 use App\Http\Controllers\TesteController;
