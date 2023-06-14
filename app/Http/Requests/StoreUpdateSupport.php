@@ -36,7 +36,8 @@ class StoreUpdateSupport extends FormRequest
                 'required',
                 'min:3',
                 'max:255',
-                Rule::unique('supports')-> ignore($this->id)
+                Rule::unique('supports')-> ignore($this->support->id)
+                //Rule::unique('supports')-> ignore($this->id) mudou o nome do parametro dinamico para support
                 //"unique:supports,subject, {$this->id}, id"
                 //unico na tab. supports, mas ignora qnd o id for o mesmo
             ];
