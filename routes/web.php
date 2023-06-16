@@ -9,6 +9,10 @@ Route::resource('/supports', SupportController::class);
 Route::get('/contato', [SiteController::class, 'contact' /*método*/]);
 Route::resource('/teste', TesteController::class);
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
 // Route::delete('/supports/{id}', [SupportController::class, 'destroy'])->name('supports.destroy');
 // Route::put('/supports/{id}', [SupportController::class, 'update'])->name('supports.update');
 // Route::get('/supports/{id}/edit', [SupportController::class, 'edit'])->name('supports.edit');
@@ -21,7 +25,5 @@ Route::resource('/teste', TesteController::class);
 
 // -> name() = nome da rota, podendo atualizar a url e continuar com o nome fixo
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
