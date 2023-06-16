@@ -2,10 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\DTO\Supports\UpdateSupportDTO;
+use App\Http\Requests\StoreUpdateSupport;
+use App\Http\Resources\SupportResource;
+use App\Services\SupportService;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class TesteController extends Controller
 {
+    public function __construct(
+     protected SupportService $service
+    )
+    {
+        
+    }
     /**
      * Display a listing of the resource.
      */
@@ -43,15 +54,15 @@ class TesteController extends Controller
      */
     public function edit(string $id)
     {
-        //
+     //
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(StoreUpdateSupport $request)
     {
-        //
+    //
     }
 
     /**

@@ -1,5 +1,5 @@
 <?php
-    namespace App\DTO\Supports;
+namespace App\DTO\Supports;
 
 use App\Enums\SupportStatus;
 use App\Http\Requests\StoreUpdateSupport;
@@ -13,10 +13,12 @@ class UpdateSupportDTO
         public string $body
     ) {}
 
-    public static function makeFromRequest(StoreUpdateSupport $request, string $id = null): self
+    public static function makeFromRequest(StoreUpdateSupport $request): self
+  
     {
+        
         return new self(
-            $id ?? $request->support->id, //se nao receber o id pega o id da request
+            $request->support, //pega o id do parametro dinamico {support}
             $request->subject,
             SupportStatus::A,
             $request->body

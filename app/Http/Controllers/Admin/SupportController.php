@@ -50,7 +50,7 @@ class SupportController extends Controller
         return view('admin/supports.edit', compact('support'));
     }
 
-    public function store(StoreUpdateSupport $request, Support $support)
+    public function store(StoreUpdateSupport $request)
     {
         $this->service->new(
             CreateSupportDTO::makeFromRequest($request)
@@ -58,7 +58,7 @@ class SupportController extends Controller
        return redirect()-> route("supports.index");
     }
 
-    public function update(StoreUpdateSupport $request, Support $support){
+    public function update(StoreUpdateSupport $request){
     
         $support = $this->service->update(
             UpdateSupportDTO::makeFromRequest($request)
