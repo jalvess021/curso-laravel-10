@@ -7,16 +7,16 @@ use App\Http\Requests\StoreUpdateSupport;
 class UpdateSupportDTO
 {
     public function __construct(
-        public int $id, 
+        public string $id, 
         public string $subject, 
         public SupportStatus $status, 
         public string $body
     ) {}
 
-    public static function makeFromRequest(StoreUpdateSupport $request): self
+    public static function makeFromRequest(StoreUpdateSupport $request, string $id = null): self
     {
         return new self(
-            $request->support->id,
+            $id ?? $request->support->id, //se nao receber o id pega o id da request
             $request->subject,
             SupportStatus::A,
             $request->body
