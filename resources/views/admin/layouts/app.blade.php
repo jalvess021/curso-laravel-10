@@ -8,15 +8,20 @@
     <title>@yield('title') - {{ config('app.name') }}</title>
 </head>
 <body>
-    <header>
-        @yield('header')
-    </header>
-    <div class="content">
-        @yield('content')
-        {{-- conteudo dinamico --}}
-    </div>
-    <footer>
-        #default footer
-    </footer>
+    <section class="container px-4 mx-auto"></section>
+        <header>
+            <div class="sm:flex sm:items-center sm:justify-between">
+                @yield('header')
+                
+            </div>
+        </header>
+        <div class="content">
+            @yield('content')
+            {{-- conteudo dinamico --}}
+        </div>
+        <footer>
+            #default footer
+        </footer>
+    </section>
 </body>
 </html>
