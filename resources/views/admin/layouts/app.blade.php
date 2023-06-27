@@ -4,24 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://cdn.tailwindcss.com"></script>
     <title>@yield('title') - {{ config('app.name') }}</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <section class="container px-4 mx-auto"></section>
+<body class='bg-gray-300'>
+    <section class="container px-4 mx-auto">
         <header>
-            <div class="sm:flex sm:items-center sm:justify-between">
                 @yield('header')
-                
-            </div>
         </header>
-        <div class="content">
+        <div>
+            <x-messages/>
             @yield('content')
             {{-- conteudo dinamico --}}
         </div>
-        <footer>
-            #default footer
-        </footer>
     </section>
 </body>
 </html>
